@@ -42,6 +42,10 @@ def create_account(name, email, day, month, year, password):
     submit_button.click()
 
 
-for row in data:
-    create_account(*row)
-    wait.until(EC.url_contains("order.gailsbread.co.uk/store"))
+def main():
+    for row in data:
+        create_account(*row)
+        wait.until(EC.url_contains("order.gailsbread.co.uk/store"))
+
+
+main()
