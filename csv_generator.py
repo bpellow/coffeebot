@@ -9,7 +9,7 @@ data = []
 user_prefix = "x"
 password = "scotland1"
 domain = "poop.com"
-name = input("Enter name:")
+name = input("Enter name: ")
 
 
 def generate_entry(day, month):
