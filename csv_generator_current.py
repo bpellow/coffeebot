@@ -6,9 +6,10 @@ logins = [["folder", "favorite", "type", "name", "notes", "fields",
 data = []
 
 # Enter user and password:
-user_prefix = "willp"
+user_prefix = "x"
 password = "scotland1"
-domain = "coldmail.com"
+domain = "poop.com"
+name = input("Enter name:")
 
 
 def generate_entry(day, month):
@@ -21,7 +22,7 @@ month = 9
 days_in_future = 14
 for day in range(current_day, current_day + days_in_future + 1):
     logins.append(generate_entry(day, month))
-    data.append([f"{user_prefix}{day:02d}{month:02d}",
+    data.append([name,
                  f"{user_prefix}{day:02d}{month:02d}@{domain}", day, month, 2002, password])
 
 
