@@ -5,10 +5,11 @@ logins = [["folder", "favorite", "type", "name", "notes", "fields",
 
 data = []
 
-# Enter user and password
-user_prefix = "willp"
+# Enter user and password:
+user_prefix = "x"
 password = "scotland1"
-email_domain = "coldmail.com"
+domain = "poop.com"
+name = input("Enter name:")
 
 
 def generate_entry(day, month):
@@ -22,17 +23,17 @@ for month in range(1, 13):
     if month == 2:
         for day in range(1, 29):
             logins.append(generate_entry(day, month))
-            data.append([f"{user_prefix}{day:02d}{month:02d}",
+            data.append([name,
                         f"{user_prefix}{day:02d}{month:02d}@{email_domain}", day, month, 2002, password])
     elif month in thirty_day_months:
         for day in range(1, 31):
             logins.append(generate_entry(day, month))
-            data.append([f"{user_prefix}{day:02d}{month:02d}",
+            data.append([name,
                         f"{user_prefix}{day:02d}{month:02d}@{email_domain}", day, month, 2002, password])
     else:
         for day in range(1, 32):
             logins.append(generate_entry(day, month))
-            data.append([f"{user_prefix}{day:02d}{month:02d}",
+            data.append([name,
                         f"{user_prefix}{day:02d}{month:02d}@{email_domain}", day, month, 2002, password])
 
 
