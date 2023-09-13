@@ -2,14 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-import time
-import csv
 
-data = []
-with open("data_current.csv", "r") as file:
-    reader = csv.reader(file)
-    for row in reader:
-        data.append(row)
 
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 20)
@@ -40,12 +33,4 @@ def create_account(name, email, day, month, year, password):
     password_input.send_keys(password)
     opt_in.click()
     submit_button.click()
-
-
-def main():
-    for row in data:
-        create_account(*row)
-        wait.until(EC.url_contains("order.gailsbread.co.uk/store"))
-
-
-main()
+    wait.until(EC.url_contains("order.gailsbread.co.uk/store"))

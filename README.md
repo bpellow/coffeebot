@@ -1,4 +1,4 @@
-# Totally legit joe bot
+# Totally worthwhile coffee bot
 
 ## Install dependencies
 ```
@@ -8,5 +8,7 @@ pip install -r requirements.txt  # Install dependencies from the requirements fi
 ```
 
 ## Usage:
- - Generate account details using the `csv_generator.py` or `csv_generator_current.py`
- - Run `bot.py`
+```
+python coffeebot.py name email_prefix email_domain password duration [--bitwarden]
+```
+Add the `--bitwarden` flag to store the accounts details in a csv ready to import to Bitwarden vault.

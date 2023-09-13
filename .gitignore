@@ -1,2 +1,3 @@
 coffeebot/
 *.csv
+__pycache__/
