@@ -1,14 +1,24 @@
 import sys
 from account_generator import AccountGenerator
-from bot import create_account
+from driver import create_account
 
-#inputs are name, email_prefix, email_domain, password, duration
 def main():
     if len(sys.argv) < 6 or len(sys.argv) > 7:
         print("Incorrect usage. Please follow this format:")
         print("python coffeebot.py name email_prefix email_domain password duration [--bitwarden]")
         sys.exit(1)
-
+    elif len(sys.argv) == 7 and sys.argv[6] != "--bitwarden":
+        print("Incorrect usage. Please follow this format:")
+        print("python coffeebot.py name email_prefix email_domain password duration [--bitwarden]")
+        sys.exit(1)
+    elif sys.argv[5].isnumeric() == False:
+        print("Incorrect usage. Please follow this format:")
+        print("python coffeebot.py name email_prefix email_domain password duration [--bitwarden]")
+        sys.exit(1)
+    elif int(sys.argv[5]) > 60:
+        print("Duration must be less than 60 days")
+        sys.exit(1)
+    
     args = sys.argv[1:6]
     generator = AccountGenerator(*args)
     data = generator.generate_accounts()
