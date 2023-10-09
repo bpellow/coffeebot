@@ -14,7 +14,7 @@ class AccountGenerator():
     def get_dates(self, duration):
         current = date.today()
         date_tuples = []
-        for day in range(duration):
+        for day in range(1, duration + 1):
             target = current + timedelta(days=day)
             day_month_tuple = (target.day, target.month)
             date_tuples.append(day_month_tuple)
